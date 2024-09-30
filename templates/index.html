@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Multiple Addresses to Map</title>
+  </head>
+  <body>
+    <h2>여러개 주소를 입력(주소는 쉼표로 구분):</h2>
+    <form method="POST">
+      <label for="addresses">주소들:</label>
+      <input type="text" id="addresses" name="addresses" placeholder="예: 서울특별시 영등포구 국제금융로6길 33, 서울특별시 강남구 테헤란로 427" required>
+      <button type="submit">찾기</button>
+    </form>
+
+    <div id="map">
+      {% if map_html %}
+        {{ map_html | safe }}
+      {% else %}
+        <p>지도 데이터를 로드할 수 없습니다. 올바른 주소를 입력해 주세요.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
